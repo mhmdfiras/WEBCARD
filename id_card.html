@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MHMD FIRAS OBEIDAT</title>
+    <style>
+        :root {
+            --main-color: #007BFF;
+            --secondary-color: #6c757d;
+            --text-color: #333;
+            --bg-color: #f8f9fa;
+            --hover-color: #0056b3;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Watermark settings */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('personal.jpg'); /* Replace with your watermark image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: blur(4px); /* 50% blur effect */
+            z-index: -1;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            color: var(--main-color);
+            animation: glowText 1.5s ease-in-out infinite alternate;
+            z-index: 1;
+            text-align: center;
+        }
+
+        @keyframes glowText {
+            from {
+                color: var(--main-color);
+                text-shadow: 0 0 10px rgba(0, 123, 255, 0.7), 0 0 20px rgba(0, 123, 255, 0.5);
+            }
+            to {
+                color: var(--hover-color);
+                text-shadow: 0 0 15px rgba(255, 102, 204, 0.7), 0 0 25px rgba(255, 102, 204, 0.5);
+            }
+        }
+
+        .social-media {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 400px;
+            z-index: 1;
+        }
+
+        .social-media a {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s;
+        }
+
+        /* 3D hover effect */
+        .social-media a:hover {
+            background-color: var(--hover-color);
+            transform: perspective(100px) rotateY(10deg) scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-media img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .social-media a:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .social-media img {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        /* Center the Gmail icon */
+        .center-gmail {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            z-index: 1;
+        }
+
+        .center-gmail a {
+            padding: 10px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .center-gmail img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .center-gmail a:hover {
+            background-color: var(--hover-color);
+            transform: perspective(100px) rotateY(10deg) scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Scroll reveal animation */
+        .social-media a,
+        .center-gmail a {
+            opacity: 0;
+            transform: translateY(50px);
+            animation: reveal 0.8s ease forwards;
+        }
+
+        .social-media a:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .social-media a:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .social-media a:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .social-media a:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .social-media a:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .social-media a:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+
+        .social-media a:nth-child(7) {
+            animation-delay: 0.7s;
+        }
+
+        .social-media a:nth-child(8) {
+            animation-delay: 0.8s;
+        }
+
+        .center-gmail a {
+            animation-delay: 0.9s;
+        }
+
+        @keyframes reveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>MHMD FIRAS OBEIDAT</h1>
+
+    <div class="social-media">
+        <a href="https://www.linkedin.com/in/mhmd-obeidat-50bb60204/" target="_blank">
+            <img src="linkedin.jpg" alt="LinkedIn">
+        </a>
+        <a href="https://x.com/obeidat1001" target="_blank">
+            <img src="X-Logo.jpg" alt="X (Twitter)">
+        </a>
+        <a href="https://www.facebook.com/mhmd.firas.obeidat/" target="_blank">
+            <img src="facebook-logo-0.jpg" alt="Facebook">
+        </a>
+        <a href="tel:+962795151152">
+            <img src="phone.jpg" alt="Phone">
+        </a>
+        <a href="https://wa.me/qr/3UFT3LSLPW6MD1" target="_blank">
+            <img src="Logo-WhatsApp.jpg" alt="WhatsApp">
+        </a>
+        <a href="https://www.instagram.com/mhmdfiras01?igsh=MWp3OGcxc3IyMGd0Yg%3D%3D&utm_source=qr" target="_blank">
+            <img src="Instagram_logo_2022.jpg" alt="Instagram">
+        </a>
+        <a href="https://snapchat.com/t/LDMW0byX" target="_blank">
+            <img src="Snapchat-Logo-2013-2019.jpg" alt="Snapchat">
+        </a>
+        <a href="https://t.me/mhmd_obeidat" target="_blank">
+            <img src="Telegram-Logo.jpg" alt="Telegram">
+        </a>
+    </div>
+
+    <!-- Centered Gmail Icon -->
+    <div class="center-gmail">
+        <a href="mailto:obeidat1001@gmail.com">
+            <img src="Gmail-Logo.jpg" alt="Gmail">
+        </a>
+    </div>
+
+</body>
+</html>

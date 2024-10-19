@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammed Obeidat's Futuristic Web Design</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: radial-gradient(circle, #1f1f1f, #121212);
+            color: #fff;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation Bar - fixed position now */
+        nav {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 3px;
+            color: #00c6ff;
+            margin-left: 30px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin-right: 30px;
+        }
+
+        nav ul li {
+            margin-right: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 20px;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        nav ul li a:hover {
+            background-color: #00c6ff;
+            border-radius: 20px;
+        }
+
+        /* Header Section */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: url('pp.jpg') no-repeat center center/cover;
+            animation: fadeInBackground 5s ease-in-out infinite;
+        }
+
+        header h1 {
+            font-size: 4rem;
+            letter-spacing: 5px;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 20px;
+            animation: titleEffect 2s ease;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px 20px;
+            border-radius: 20px;
+        }
+
+        /* Keyframes for animations */
+        @keyframes fadeInBackground {
+            0% { background-size: 110%; }
+            50% { background-size: 100%; }
+            100% { background-size: 110%; }
+        }
+
+        @keyframes titleEffect {
+            0% {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Work Section */
+        .work-section {
+            padding: 100px 0;
+            text-align: center;
+            background: #2a2a2a;
+            margin-top: 70px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .work-section::before {
+            content: "";
+            background: url('profile photo.jpg') no-repeat center center;
+            opacity: 0.1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .work-section h2 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            letter-spacing: 4px;
+        }
+
+        .work-description {
+            font-size: 1.3rem;
+            margin-bottom: 50px;
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        /* Futuristic Card Section */
+        .card {
+            width: 300px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            margin: 40px auto;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.4s ease, background-color 0.4s ease;
+        }
+
+        .card:hover {
+            transform: rotateY(15deg) scale(1.05);
+            background-color: rgba(0, 198, 255, 0.2);
+        }
+
+        .card-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .card-content h3 {
+            font-size: 1.8rem;
+            color: #00c6ff;
+        }
+
+        .card-content p {
+            font-size: 1rem;
+            margin-top: 10px;
+            color: #e0e0e0;
+        }
+
+        /* Social Media Section */
+        .social-media {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .social-media a {
+            margin: 0 20px;
+            color: #00c6ff;
+            font-size: 2.5rem;
+            transition: transform 0.4s ease;
+        }
+
+        .social-media a:hover {
+            transform: scale(1.2);
+        }
+
+        /* Electronic ID Card Section */
+        .id-card-section {
+            padding: 60px 0;
+            background: #1e1e1e;
+            text-align: center;
+        }
+
+        .id-card-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #00c6ff;
+        }
+
+        .id-card-button {
+            padding: 15px 40px;
+            background: linear-gradient(45deg, #00c6ff, #0072ff);
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border-radius: 30px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        .id-card-button:hover {
+            transform: translateY(-5px);
+        }
+
+        /* QR Code Section */
+        .qr-section {
+            padding: 40px 0;
+            text-align: center;
+            background: #1e1e1e;
+        }
+
+        .qr-section h3 {
+            color: #00c6ff;
+            margin-bottom: 10px;
+        }
+
+        .qr-section img {
+            width: 200px;
+            height: 200px;
+            margin-top: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .qr-section img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 60px 0;
+            background-color: #2a2a2a;
+            text-align: center;
+        }
+
+        #contact h2 {
+            color: #00c6ff;
+            font-size: 2.5rem;
+        }
+
+        #contact p {
+            margin-top: 20px;
+            color: #ccc;
+            font-size: 1.2rem;
+        }
+
+        #contact a {
+            margin-top: 30px;
+            display: block;
+            color: #00c6ff;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        #contact a:hover {
+            color: #0072ff;
+        }
+
+        /* Footer */
+        footer {
+            background: #111;
+            padding: 30px;
+            text-align: center;
+            color: #fff;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            .work-description {
+                width: 90%;
+            }
+
+            .social-media a {
+                font-size: 2rem;
+            }
+
+            .qr-section img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">MO Design</div>
+        <ul>
+            <li><a href="#work">My Work</a></li>
+            <li><a href="#id-card">ID Card</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Futuristic Web Design & Digital Identity</h1>
+        <p>Crafting Modern Websites & Personalized ID Solutions</p>
+    </header>
+
+    <!-- Work Section -->
+    <section class="work-section" id="work">
+        <h2>What I Do</h2>
+        <p class="work-description">
+            I design and develop futuristic web pages with sleek, modern user interfaces. I also create electronic personal identification cards that allow clients to link all their social media platforms in one place.
+            My work aims to create visually stunning, easy-to-navigate sites with cutting-edge technology that stand out in the digital world.
+        </p>
+        <div class="card">
+            <div class="card-content">
+                <h3>Modern Web Design</h3>
+                <p>Responsive, Fast, and Engaging</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <h3>Digital Identity Cards</h3>
+                <p>All Social Media in One Place</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Electronic ID Card Section -->
+    <section class="id-card-section" id="id-card">
+        <h2>Your Electronic ID Card</h2>
+        <p>Get access to your personalized digital ID with all your social media platforms.</p>
+        <a href="id_card.html" class="id-card-button">View My e-ID</a>
+    </section>
+
+    <!-- QR Code Section -->
+    <section class="qr-section">
+        <h3>Scan to Access My ID</h3>
+        <img src="fiqr.jpg" alt="QR Code">
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Feel free to reach out to me for any inquiries or project discussions!</p>
+        <a href="https://mhmdfiras.github.io/IdCard/">MHMD FIRAS OBEIDAT</a>
+    </section>
+
+    <!-- Social Media Section -->
+    <div class="social-media">
+        <a href="https://facebook.com" target="_blank" title="Facebook">
+            <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://twitter.com" target="_blank" title="Twitter">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://linkedin.com" target="_blank" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank" title="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Mohammed Obeidat | Futuristic Web Design & Digital Identity Cards</p>
+    </footer>
+
+    <!-- FontAwesome Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>
